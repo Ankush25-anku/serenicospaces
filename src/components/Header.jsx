@@ -7,6 +7,10 @@ import { FiMenu, FiX } from "react-icons/fi";
 export default function Header() {
   const [open, setOpen] = useState(false);
 
+  const closeMenu = () => {
+    setOpen(false);
+  };
+
   return (
     <header className="header">
       <div className="logo">
@@ -17,18 +21,20 @@ export default function Header() {
       {/* Desktop Menu */}
 
       <nav className="desktop-nav">
-        <Link href="/">Home</Link>
+        <Link href="#home">Home</Link>
 
-        <Link href="/">Projects</Link>
+        <Link href="#projects">Projects</Link>
 
-        <Link href="/">Services</Link>
+        <Link href="#services">Services</Link>
 
-        <Link href="/">About</Link>
+        <Link href="#about">About</Link>
 
-        <Link href="/">Contact</Link>
+        <Link href="#contact">Contact</Link>
       </nav>
 
-      <button className="expert desktop-btn">Call an Expert</button>
+      <Link href="#contact" className="expert desktop-btn">
+        Call an Expert
+      </Link>
 
       {/* Mobile Menu Button */}
 
@@ -40,27 +46,33 @@ export default function Header() {
 
       {open && (
         <div className="mobile-menu">
-          <Link href="/" onClick={() => setOpen(false)}>
+          <Link href="#home" onClick={closeMenu}>
             Home
           </Link>
 
-          <Link href="/" onClick={() => setOpen(false)}>
+          <Link href="#projects" onClick={closeMenu}>
             Projects
           </Link>
 
-          <Link href="/" onClick={() => setOpen(false)}>
+          <Link href="#services" onClick={closeMenu}>
             Services
           </Link>
 
-          <Link href="/" onClick={() => setOpen(false)}>
+          <Link href="#about" onClick={closeMenu}>
             About
           </Link>
 
-          <Link href="/" onClick={() => setOpen(false)}>
+          <Link href="#contact" onClick={closeMenu}>
             Contact
           </Link>
 
-          <button className="expert">Call an Expert</button>
+          <Link
+            href="#contact"
+            className="expert"
+            onClick={() => setOpen(false)}
+          >
+            Call an Expert
+          </Link>
         </div>
       )}
     </header>

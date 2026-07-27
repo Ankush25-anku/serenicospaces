@@ -112,8 +112,6 @@ canvas {
 ===================================== */
 
 section,
-header,
-footer,
 main {
   width: 100%;
 
@@ -122,6 +120,13 @@ main {
   overflow-x: hidden;
 }
 
+footer {
+  width: 100%;
+}
+
+section {
+  scroll-margin-top: 120px;
+}
 /* =====================================
         MOBILE OVERFLOW FIX
 ===================================== */
@@ -177,6 +182,8 @@ body {
   position: relative;
 
   z-index: 1000;
+
+  overflow: visible;
 }
 
 /* LOGO */
@@ -269,11 +276,35 @@ body {
 
 /* HIDE MOBILE */
 
-.menu-btn,
-.mobile-menu {
+/* HIDE MOBILE ELEMENTS ON DESKTOP */
+
+.menu-btn {
   display: none;
 }
 
+.mobile-menu {
+  position: absolute;
+
+  top: 90px;
+
+  left: 0;
+
+  width: 100%;
+
+  background: white;
+
+  padding: 35px 25px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 25px;
+
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+
+  z-index: 99999;
+}
 /* =====================================
           TABLET
 ===================================== */
@@ -338,6 +369,8 @@ body {
     color: #222;
 
     cursor: pointer;
+
+    z-index: 10000;
   }
 
   .mobile-menu {
@@ -360,6 +393,8 @@ body {
     gap: 25px;
 
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+
+    z-index: 9999;
   }
 
   .mobile-menu a {
