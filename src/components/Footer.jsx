@@ -19,15 +19,14 @@ export default function Footer() {
         </div>
 
         {/* CONTACT */}
-
         <div className="footer-column">
           <h3>Contact Us</h3>
 
-          <a href="#">contact@serenicospaces.com</a>
+          <a href="#">hello@atelierinteriors.com</a>
 
-          <a href="#">Guwahati and Kolkata +918130279245</a>
+          <a href="#">Bangalore and Chennai +919876543210</a>
 
-          <a href="#">Imphal +917629946802</a>
+          <a href="#">Pune +919812345678</a>
         </div>
 
         {/* ABOUT */}
@@ -43,7 +42,7 @@ export default function Footer() {
             Ceilings || Lab Workspace Solutions
           </p>
 
-          <p>📍 Assam &nbsp; 📍 Imphal &nbsp; 📍 Kolkata</p>
+          <p>📍 Karnataka &nbsp; 📍 Tamil Nadu &nbsp; 📍 Maharashtra</p>
         </div>
       </div>
 
