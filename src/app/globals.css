@@ -4,69 +4,195 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Luxury Interior Design Theme */
+/* =====================================
+        LUXURY DESIGN SYSTEM
+===================================== */
+
 :root {
   --ivory: #f5f0e8;
+
   --sand: #d8c7ad;
+
   --espresso: #211b16;
+
   --gold: #c9a45c;
+
   --gold-dark: #c38b2c;
+
   --text: #2a241e;
+
   --arch-border: #d4c2aa;
+
   --font-heading: "Cormorant Garamond", serif;
+
   --font-body: "Manrope", sans-serif;
 }
 
-* {
+/* =====================================
+        GLOBAL RESET
+===================================== */
+
+*,
+*::before,
+*::after {
   margin: 0;
+
   padding: 0;
+
   box-sizing: border-box;
 }
 
 html {
+  width: 100%;
+
+  max-width: 100%;
+
+  overflow-x: hidden;
+
   scroll-behavior: smooth;
 }
 
 body {
-  background: var(--ivory);
-  color: var(--text);
-  font-family: var(--font-body);
+  width: 100%;
+
+  max-width: 100%;
+
   overflow-x: hidden;
+
+  background: var(--ivory);
+
+  color: var(--text);
+
+  font-family: var(--font-body);
 }
+
+/* =====================================
+        TYPOGRAPHY
+===================================== */
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: var(--font-heading);
+}
+
+p,
+a,
+button,
+input,
+textarea {
+  font-family: var(--font-body);
 }
 
 button {
   cursor: pointer;
 }
 
-img {
+a {
+  text-decoration: none;
+}
+
+/* =====================================
+        MEDIA ELEMENTS
+===================================== */
+
+img,
+video,
+canvas {
   max-width: 100%;
+
+  height: auto;
+
   display: block;
 }
 
 /* =====================================
-          HEADER SECTION
+        SECTION OVERFLOW CONTROL
 ===================================== */
+
+section,
+header,
+footer,
+main {
+  width: 100%;
+
+  max-width: 100vw;
+
+  overflow-x: hidden;
+}
+
+/* =====================================
+        MOBILE OVERFLOW FIX
+===================================== */
+
+@media (max-width: 768px) {
+  html,
+  body {
+    width: 100%;
+
+    max-width: 100%;
+
+    overflow-x: hidden !important;
+  }
+
+  #__next {
+    overflow-x: hidden;
+  }
+
+  section,
+  header,
+  footer,
+  main {
+    overflow-x: hidden;
+
+    max-width: 100vw;
+  }
+}
+
+/* =====================================
+        REMOVE MOBILE HORIZONTAL BOUNCE
+===================================== */
+
+body {
+  overscroll-behavior-x: none;
+}
+/* =====================================
+          HEADER
+===================================== */
+
 .header {
   height: 118px;
+
   background: white;
+
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
+
   padding: 0 11%;
+
+  position: relative;
+
+  z-index: 1000;
 }
+
+/* LOGO */
 
 .logo {
   font-family: var(--font-heading);
+
   font-size: 42px;
+
   font-style: italic;
+
   color: var(--gold-dark);
+
   line-height: 1;
+
+  white-space: nowrap;
 }
 
 .logo span {
@@ -75,50 +201,183 @@ img {
 
 .logo p {
   font-family: var(--font-body);
+
   font-size: 9px;
+
   letter-spacing: 3px;
+
   color: #777;
+
   margin-top: 10px;
 }
 
-.header nav {
+/* DESKTOP NAV */
+
+.desktop-nav {
   display: flex;
+
   gap: 38px;
 }
 
-.header nav a {
+.desktop-nav a {
   font-family: var(--font-body);
+
   font-size: 17px;
+
   color: #111;
+
   text-decoration: none;
+
   position: relative;
 }
 
-.header nav a:first-child:after {
+.desktop-nav a:first-child:after {
   content: "";
+
   position: absolute;
+
   height: 2px;
+
   width: 100%;
+
   background: #111;
+
   bottom: -10px;
+
   left: 0;
 }
 
+/* BUTTON */
+
 .expert {
   background: var(--gold-dark);
+
   border: none;
+
   padding: 20px 45px;
+
   border-radius: 20px;
+
   color: white;
+
   font-size: 17px;
+
   font-weight: 600;
-  transition: opacity 0.3s ease;
+
+  cursor: pointer;
 }
 
-.expert:hover {
-  opacity: 0.9;
+/* HIDE MOBILE */
+
+.menu-btn,
+.mobile-menu {
+  display: none;
 }
 
+/* =====================================
+          TABLET
+===================================== */
+
+@media (max-width: 1100px) {
+  .header {
+    padding: 0 5%;
+  }
+
+  .desktop-nav {
+    gap: 20px;
+  }
+
+  .logo {
+    font-size: 36px;
+  }
+
+  .expert {
+    padding: 16px 30px;
+  }
+}
+
+/* =====================================
+          MOBILE
+===================================== */
+
+@media (max-width: 768px) {
+  .header {
+    height: 90px;
+
+    padding: 0 25px;
+  }
+
+  .logo {
+    font-size: 30px;
+  }
+
+  .logo p {
+    font-size: 7px;
+
+    letter-spacing: 2px;
+  }
+
+  .desktop-nav,
+  .desktop-btn {
+    display: none;
+  }
+
+  .menu-btn {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: none;
+
+    border: none;
+
+    font-size: 35px;
+
+    color: #222;
+
+    cursor: pointer;
+  }
+
+  .mobile-menu {
+    position: absolute;
+
+    top: 90px;
+
+    left: 0;
+
+    width: 100%;
+
+    background: white;
+
+    padding: 35px 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .mobile-menu a {
+    font-family: var(--font-body);
+
+    font-size: 20px;
+
+    color: #111;
+
+    text-decoration: none;
+  }
+
+  .mobile-menu .expert {
+    margin-top: 15px;
+
+    width: 100%;
+  }
+}
 /* =====================================
           HERO SECTION
 ===================================== */
@@ -612,10 +871,8 @@ img {
   margin: auto;
 }
 
-.service-card:last-child{
-
-grid-column:auto;
-
+.service-card:last-child {
+  grid-column: auto;
 }
 
 /* CARD */
