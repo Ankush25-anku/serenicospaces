@@ -22,12 +22,11 @@ export default function Header() {
 
       <nav className="desktop-nav">
         <Link href="#home">Home</Link>
-
-        <Link href="#projects">Projects</Link>
+        <Link href="#about">About</Link>
 
         <Link href="#services">Services</Link>
 
-        <Link href="#about">About</Link>
+        <Link href="#projects">Projects</Link>
 
         <Link href="#contact">Contact</Link>
       </nav>
@@ -50,16 +49,15 @@ export default function Header() {
             Home
           </Link>
 
-          <Link href="#projects" onClick={closeMenu}>
-            Projects
+          <Link href="#about" onClick={closeMenu}>
+            About
           </Link>
 
           <Link href="#services" onClick={closeMenu}>
             Services
           </Link>
-
-          <Link href="#about" onClick={closeMenu}>
-            About
+          <Link href="#projects" onClick={closeMenu}>
+            Projects
           </Link>
 
           <Link href="#contact" onClick={closeMenu}>
