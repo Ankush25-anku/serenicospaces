@@ -2,14 +2,40 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { FiMenu, FiX } from "react-icons/fi";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
 
+  const pathname = usePathname();
+
   const closeMenu = () => {
     setOpen(false);
   };
+
+  const menuItems = [
+    {
+      name: "Home",
+      path: "/",
+    },
+    {
+      name: "About",
+      path: "/about",
+    },
+    {
+      name: "Services",
+      path: "/services",
+    },
+    {
+      name: "Projects",
+      path: "/projects",
+    },
+    {
+      name: "Contact",
+      path: "/contact",
+    },
+  ];
 
   return (
     <header className="header">
@@ -21,54 +47,34 @@ export default function Header() {
       {/* Desktop Menu */}
 
       <nav className="desktop-nav">
-        <Link href="#home">Home</Link>
-        <Link href="#about">About</Link>
-
-        <Link href="#services">Services</Link>
-
-        <Link href="#projects">Projects</Link>
-
-        <Link href="#contact">Contact</Link>
+        {menuItems.map((item) => (
+          <Link
+            key={item.path}
+            href={item.path}
+            className={pathname === item.path ? "active" : ""}
+          >
+            {item.name}
+          </Link>
+        ))}
       </nav>
 
-      <Link href="#contact" className="expert desktop-btn">
+      <Link href="/contact" className="expert desktop-btn">
         Call an Expert
       </Link>
-
-      {/* Mobile Menu Button */}
 
       <button className="menu-btn" onClick={() => setOpen(!open)}>
         {open ? <FiX /> : <FiMenu />}
       </button>
 
-      {/* Mobile Dropdown */}
-
       {open && (
         <div className="mobile-menu">
-          <Link href="#home" onClick={closeMenu}>
-            Home
-          </Link>
+          {menuItems.map((item) => (
+            <Link key={item.path} href={item.path} onClick={closeMenu}>
+              {item.name}
+            </Link>
+          ))}
 
-          <Link href="#about" onClick={closeMenu}>
-            About
-          </Link>
-
-          <Link href="#services" onClick={closeMenu}>
-            Services
-          </Link>
-          <Link href="#projects" onClick={closeMenu}>
-            Projects
-          </Link>
-
-          <Link href="#contact" onClick={closeMenu}>
-            Contact
-          </Link>
-
-          <Link
-            href="#contact"
-            className="expert"
-            onClick={() => setOpen(false)}
-          >
+          <Link href="/contact" className="expert" onClick={closeMenu}>
             Call an Expert
           </Link>
         </div>

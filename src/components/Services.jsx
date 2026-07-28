@@ -1,87 +1,72 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-
-import {
-  Sofa,
-  DoorClosed,
-  Tv,
-  Armchair,
-  Lightbulb,
-  Baby,
-  Landmark,
-  Bath,
-  PaintRoller,
-  ScrollText,
-  Hammer,
-  Layers,
-  Wrench,
-} from "lucide-react";
 
 const services = [
   {
     name: "Space-saver furniture",
-    icon: Sofa,
+    image: "/images/services/kids_bedroom.webp",
   },
 
   {
     name: "Wardrobes",
-    icon: DoorClosed,
+    image: "/images/services/kids_bedroom.webp",
   },
 
   {
     name: "TV Units",
-    icon: Tv,
+    image: "/images/services/kids_bedroom.webp",
   },
 
   {
     name: "Study Table",
-    icon: Armchair,
+    image: "/images/services/kids_bedroom.webp",
   },
 
   {
     name: "False Ceilings",
-    icon: Lightbulb,
+    image: "/images/services/false_ceilings.webp",
   },
 
   {
     name: "Kids Bedroom",
-    icon: Baby,
+    image: "/images/services/kids_bedroom.webp",
   },
 
   {
     name: "Mandirs",
-    icon: Landmark,
+    image: "/images/services/mandirs_serenico.webp",
   },
 
   {
     name: "Bathrooms",
-    icon: Bath,
+    image: "/images/services/bathrooms.webp",
   },
 
   {
     name: "Paint",
-    icon: PaintRoller,
+    image: "/images/services/paint_serenico.webp",
   },
 
   {
     name: "Wallpaper",
-    icon: ScrollText,
+    image: "/images/services/wallpapers.webp",
   },
 
   {
     name: "Renovation",
-    icon: Hammer,
+    image: "/images/services/renovation.webp",
   },
 
   {
     name: "Tiles",
-    icon: Layers,
+    image: "/images/services/tiles.webp",
   },
 
   {
     name: "Plumbing",
-    icon: Wrench,
+    image: "/images/services/plumbing.webp",
   },
 ];
 
@@ -91,19 +76,37 @@ export default function Services() {
       <motion.h2>Our Services</motion.h2>
 
       <div className="services-grid">
-        {services.map((service, index) => {
-          const Icon = service.icon;
-
-          return (
-            <div className="service-card" key={index}>
-              <div className="service-icon">
-                <Icon />
-              </div>
-
-              <p>{service.name}</p>
+        {services.map((service, index) => (
+          <motion.div
+            className="service-card"
+            key={index}
+            initial={{
+              opacity: 0,
+              y: 30,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              delay: index * 0.05,
+            }}
+          >
+            <div className="service-image">
+              <Image
+                src={service.image}
+                alt={service.name}
+                width={70}
+                height={70}
+              />
             </div>
-          );
-        })}
+
+            <p>{service.name}</p>
+          </motion.div>
+        ))}
       </div>
 
       <button className="service-btn">Call an Expert</button>
