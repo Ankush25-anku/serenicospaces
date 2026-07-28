@@ -1,135 +1,107 @@
 "use client";
 
-import {
-  FaCouch,
-  FaDoorClosed,
-  FaTv,
-  FaChair,
-  FaLightbulb,
-  FaChild,
-  FaOm,
-  FaBath,
-  FaPaintRoller,
-  FaScroll,
-  FaTools,
-  FaHammer,
-  FaWrench,
-} from "react-icons/fa";
 import { motion } from "framer-motion";
+
+import {
+  Sofa,
+  DoorClosed,
+  Tv,
+  Armchair,
+  Lightbulb,
+  Baby,
+  Landmark,
+  Bath,
+  PaintRoller,
+  ScrollText,
+  Hammer,
+  Layers,
+  Wrench,
+} from "lucide-react";
 
 const services = [
   {
     name: "Space-saver furniture",
-    icon: FaCouch,
+    icon: Sofa,
   },
 
   {
     name: "Wardrobes",
-    icon: FaDoorClosed,
+    icon: DoorClosed,
   },
 
   {
     name: "TV Units",
-    icon: FaTv,
+    icon: Tv,
   },
 
   {
     name: "Study Table",
-    icon: FaChair,
+    icon: Armchair,
   },
 
   {
     name: "False Ceilings",
-    icon: FaLightbulb,
+    icon: Lightbulb,
   },
 
   {
     name: "Kids Bedroom",
-    icon: FaChild,
+    icon: Baby,
   },
 
   {
     name: "Mandirs",
-    icon: FaOm,
+    icon: Landmark,
   },
 
   {
     name: "Bathrooms",
-    icon: FaBath,
+    icon: Bath,
   },
 
   {
     name: "Paint",
-    icon: FaPaintRoller,
+    icon: PaintRoller,
   },
 
   {
     name: "Wallpaper",
-    icon: FaScroll,
+    icon: ScrollText,
   },
 
   {
     name: "Renovation",
-    icon: FaHammer,
+    icon: Hammer,
   },
 
   {
     name: "Tiles",
-    icon: FaTools,
+    icon: Layers,
   },
 
   {
     name: "Plumbing",
-    icon: FaWrench,
+    icon: Wrench,
   },
 ];
 
 export default function Services() {
   return (
     <section className="services">
-      <motion.h2
-        initial={{
-          opacity: 0,
-          y: 30,
-        }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-        }}
-        viewport={{
-          once: true,
-        }}
-      >
-        Our Services
-      </motion.h2>
+      <motion.h2>Our Services</motion.h2>
 
       <div className="services-grid">
         {services.map((service, index) => {
           const Icon = service.icon;
 
           return (
-            <motion.div
-              className="service-card"
-              key={index}
-              initial={{
-                opacity: 0,
-                y: 40,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-              }}
-              transition={{
-                delay: index * 0.05,
-              }}
-            >
-              <Icon className="service-icon" />
+            <div className="service-card" key={index}>
+              <div className="service-icon">
+                <Icon />
+              </div>
 
               <p>{service.name}</p>
-            </motion.div>
+            </div>
           );
         })}
       </div>

@@ -867,11 +867,16 @@ body {
 /* ===================================
         SERVICES SECTION
 =================================== */
-
+/* ===========================
+        SERVICES
+=========================== */
+/* =====================================
+            SERVICES SECTION
+===================================== */
 .services {
-  background: #ffffff;
+  padding: 60px 10% 50px;
 
-  padding: 80px 8% 70px;
+  background: #ffffff;
 
   text-align: center;
 }
@@ -879,145 +884,168 @@ body {
 /* TITLE */
 
 .services h2 {
-  font-family: "Cormorant Garamond";
+  font-family: var(--font-heading);
 
-  font-size: 72px;
+  font-size: 68px;
 
   font-weight: 600;
 
-  color: #c9911d;
+  color: #c38b2c;
 
-  margin-bottom: 90px;
+  margin-bottom: 55px;
+
+  line-height: 1;
 }
 
 /* GRID */
 
 .services-grid {
-  display: grid;
 
-  grid-template-columns: repeat(5, 1fr);
+  display:grid;
 
-  row-gap: 100px;
+  grid-template-columns:repeat(5, 170px);
 
-  column-gap: 40px;
+  justify-content:center;
 
-  max-width: 1250px;
+  column-gap:35px;
 
-  margin: auto;
-}
+  row-gap:55px;
 
-.service-card:last-child {
-  grid-column: auto;
+  max-width:1000px;
+
+  margin:auto;
+
 }
 
 /* CARD */
 
 .service-card {
-  display: flex;
 
-  flex-direction: column;
+  display:flex;
 
-  align-items: center;
+  flex-direction:column;
 
-  justify-content: center;
+  align-items:center;
+
+  justify-content:flex-start;
+
 }
+/* ICON */
 
 .service-icon {
-  font-size: 75px;
 
-  color: #d89b00;
+  width:70px;
 
-  stroke-width: 1;
+  height:70px;
 
-  margin-bottom: 25px;
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  margin-bottom:15px;
+
 }
 
-.service-card p {
-  font-family: "Cormorant Garamond";
 
-  font-size: 24px;
+.service-icon svg {
+
+  width:55px;
+
+  height:55px;
+
+  color:#c38b2c;
+
+  stroke-width:1.5;
+
+}
+
+/* TEXT */
+
+.service-card p {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 22px;
 
   font-weight: 600;
 
-  color: #24364b;
+  color: #24354d;
+
+  line-height: 1.15;
 
   max-width: 150px;
 
-  line-height: 1.1;
+  text-align: center;
 }
 
 /* BUTTON */
 
 .service-btn {
-  margin-top: 80px;
+  margin-top: 55px;
 
-  background: #d29100;
+  padding: 18px 48px;
 
-  border: none;
+  background: #c38b2c;
 
   color: white;
 
-  padding: 20px 55px;
+  border: none;
 
-  border-radius: 20px;
+  border-radius: 18px;
 
   font-size: 18px;
 
-  font-family: Manrope;
-
-  cursor: pointer;
+  font-weight: 600;
 }
 
-/* ===================================
-        TABLET
-=================================== */
+/* TABLET */
 
-@media (max-width: 1000px) {
-  .services h2 {
-    font-size: 55px;
-  }
-
+@media (max-width: 1100px) {
   .services-grid {
     grid-template-columns: repeat(3, 1fr);
+
+    row-gap: 50px;
   }
 }
 
-/* ===================================
-        MOBILE
-=================================== */
+/* MOBILE */
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .services {
-    padding: 60px 20px;
+    padding: 50px 20px;
   }
 
   .services h2 {
-    font-size: 45px;
+    font-size: 48px;
 
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
 
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
 
-    row-gap: 60px;
+    column-gap: 20px;
+
+    row-gap: 40px;
   }
 
   .service-icon {
-    font-size: 55px;
+    width: 65px;
+
+    height: 65px;
+  }
+
+  .service-icon svg {
+    width: 50px;
+
+    height: 50px;
   }
 
   .service-card p {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
-
-@media (max-width: 380px) {
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* ===================================
         CONTACT SECTION
 =================================== */
