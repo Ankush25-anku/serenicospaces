@@ -1,6 +1,7 @@
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import MoveToTop from "@/components/MoveToTop";
 
 const heading = Cormorant_Garamond({
   subsets: ["latin"],
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
       <body className={`${heading.className} ${body.className}`}>
         {children}
         <WhatsAppButton />
+        <MoveToTop />
       </body>
     </html>
   );

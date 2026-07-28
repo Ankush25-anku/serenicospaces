@@ -892,73 +892,67 @@ body {
 
   color: #c38b2c;
 
-  margin-bottom: 55px;
+  margin-bottom: 40px;
 
   line-height: 1;
 }
 
 /* GRID */
 
+/* GRID */
+
 .services-grid {
+  display: grid;
 
-  display:grid;
+  grid-template-columns: repeat(5, 140px);
 
-  grid-template-columns:repeat(5, 170px);
+  justify-content: center;
 
-  justify-content:center;
+  column-gap: 20px;
 
-  column-gap:35px;
+  row-gap: 35px;
 
-  row-gap:55px;
+  max-width: 850px;
 
-  max-width:1000px;
-
-  margin:auto;
-
+  margin: auto;
 }
 
 /* CARD */
 
 .service-card {
+  display: flex;
 
-  display:flex;
+  flex-direction: column;
 
-  flex-direction:column;
+  align-items: center;
 
-  align-items:center;
-
-  justify-content:flex-start;
-
+  justify-content: flex-start;
 }
+
 /* ICON */
 
 .service-icon {
+  width: 60px;
 
-  width:70px;
+  height: 60px;
 
-  height:70px;
+  display: flex;
 
-  display:flex;
+  align-items: center;
 
-  align-items:center;
+  justify-content: center;
 
-  justify-content:center;
-
-  margin-bottom:15px;
-
+  margin-bottom: 12px;
 }
 
-
 .service-icon svg {
+  width: 48px;
 
-  width:55px;
+  height: 48px;
 
-  height:55px;
+  color: #c38b2c;
 
-  color:#c38b2c;
-
-  stroke-width:1.5;
-
+  stroke-width: 1.6;
 }
 
 /* TEXT */
@@ -966,7 +960,7 @@ body {
 .service-card p {
   font-family: "Cormorant Garamond", serif;
 
-  font-size: 22px;
+  font-size: 20px;
 
   font-weight: 600;
 
@@ -974,7 +968,7 @@ body {
 
   line-height: 1.15;
 
-  max-width: 150px;
+  max-width: 130px;
 
   text-align: center;
 }
@@ -982,7 +976,7 @@ body {
 /* BUTTON */
 
 .service-btn {
-  margin-top: 55px;
+  margin-top: 40px;
 
   padding: 18px 48px;
 
@@ -1384,5 +1378,63 @@ body {
     bottom: 20px;
 
     font-size: 32px;
+  }
+}
+
+/* MOVE TO TOP BUTTON */
+
+.move-top {
+  position: fixed;
+
+  right: 35px;
+
+  bottom: 110px;
+
+  width: 48px;
+
+  height: 48px;
+
+  border-radius: 50%;
+
+  border: none;
+
+  background: #c38b2c;
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+  font-size: 18px;
+
+  z-index: 999;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+  transition: all 0.3s ease;
+}
+
+.move-top:hover {
+  transform: translateY(-5px);
+
+  background: #b17b22;
+}
+
+@media (max-width: 768px) {
+  .move-top {
+    right: 20px;
+
+    bottom: 95px;
+
+    width: 42px;
+
+    height: 42px;
+
+    font-size: 16px;
   }
 }
