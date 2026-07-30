@@ -2,41 +2,65 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const projects = [
   {
     title: "Luxury Private Sanctuaries",
+
+    slug: "Luxury-private-sanctuaries",
+
     description:
       "Bespoke bedroom designs that merge intimate comfort with modern architectural elegance.",
+
     image: "/images/projects/bedroom.avif",
+
     reverse: false,
+
     scroll: false,
   },
 
   {
     title: "Luxury Modular Kitchens",
+
+    slug: "Luxury-modular-kitchens",
+
     description:
       "Where ergonomic engineering meets premium finishes for a world-class culinary experience.",
+
     image: "/images/projects/kitchen.avif",
+
     reverse: true,
+
     scroll: true,
   },
 
   {
     title: "Strategic Business & Retail Spaces",
+
+    slug: "Strategic-business-retail-spaces",
+
     description:
-      "High-impact retail storefronts and sophisticated corporate hubs designed to maximize brand prestige, customer engagement, and organizational productivity.",
+      "High-impact retail storefronts and sophisticated corporate hubs designed to maximize brand prestige.",
+
     image: "/images/projects/kitchen.avif",
+
     reverse: false,
+
     scroll: false,
   },
 
   {
     title: "Sacred Spaces",
-    description:
-      "Designed with attention to alignment, light, and flow, our sacred spaces create an atmosphere of calm, clarity, and quiet devotion.",
+
+    slug: "Sacred-spaces",
+
+    description: "Designed with attention to alignment, light, and flow.",
+
     image: "/images/projects/sacred.avif",
+
     reverse: true,
+
     scroll: true,
   },
 ];
@@ -71,7 +95,7 @@ export default function SignatureSpaces() {
 
             <p>{project.description}</p>
 
-            <a>VIEW</a>
+            <Link href={`/projects/${project.slug}`}>VIEW</Link>
           </motion.div>
 
           {/* IMAGE */}

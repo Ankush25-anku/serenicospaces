@@ -1,14 +1,29 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { FiMenu, FiX } from "react-icons/fi";
+import Image from "next/image";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
 
   const pathname = usePathname();
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const closeMenu = () => {
     setOpen(false);
@@ -20,17 +35,19 @@ export default function Header() {
       path: "/",
     },
     {
-      name: "About",
-      path: "/about",
+      name: "Projects",
+      path: "/projects",
     },
+
     {
       name: "Services",
       path: "/services",
     },
     {
-      name: "Projects",
-      path: "/projects",
+      name: "About",
+      path: "/about",
     },
+
     {
       name: "Contact",
       path: "/contact",
@@ -40,8 +57,13 @@ export default function Header() {
   return (
     <header className="header">
       <div className="logo">
-        Serenico<span>Spaces</span>
-        <p>DESIGNING YOUR DREAM LIVING</p>
+        <Image
+          src="/images/logo.png"
+          alt="Serenico Spaces"
+          width={260}
+          height={65}
+          priority
+        />
       </div>
 
       {/* Desktop Menu */}
@@ -62,7 +84,13 @@ export default function Header() {
         Call an Expert
       </Link>
 
-      <button className="menu-btn" onClick={() => setOpen(!open)}>
+      <button
+        className="menu-btn"
+        onClick={() => {
+          console.log("clicked");
+          setOpen(!open);
+        }}
+      >
         {open ? <FiX /> : <FiMenu />}
       </button>
 

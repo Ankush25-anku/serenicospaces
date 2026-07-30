@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import FeaturedInterior from "./FeaturedInterior";
 
 export default function About() {
   return (
@@ -26,7 +27,7 @@ export default function About() {
 
       <div className="about-grid">
         <motion.div
-          className="about-column"
+          className="about-column about-first"
           initial={{
             opacity: 0,
             x: -40,
@@ -55,10 +56,15 @@ export default function About() {
             craftsmanship, we deliver spaces that work in harmony with your
             lifestyle.
           </p>
+
+          {/* MOBILE IMAGE */}
+          <div className="mobile-featured">
+            <FeaturedInterior />
+          </div>
         </motion.div>
 
         <motion.div
-          className="about-column"
+          className="about-column about-second"
           initial={{
             opacity: 0,
             x: 40,

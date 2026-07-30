@@ -7,13 +7,12 @@ import Footer from "@/components/Footer";
 
 const heading = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500",],
 });
-
 const body = Manrope({
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
 });
-
 export const metadata = {
   title: "Serenico Spaces",
   description: "Luxury Interior Design Studio",

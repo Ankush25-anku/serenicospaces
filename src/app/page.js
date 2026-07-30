@@ -9,40 +9,33 @@ import Services from "@/components/Services";
 export default function Home() {
   return (
     <>
-    
+      {/* HOME */}
 
-        {/* HOME */}
-   
-          <Hero />
- 
+      <Hero />
 
-        {/* ABOUT */}
-     
-          <About />
-  
+      {/* ABOUT */}
 
-        {/* PROJECTS */}
+      <About />
 
-          <FeaturedInterior />
-     
+      {/* PROJECTS */}
 
-        {/* EXPERTISE */}
-       
-          <Expertise />
+      {/* PROJECTS */}
 
+      <div className="desktop-featured">
+        <FeaturedInterior />
+      </div>
 
-        {/* SERVICES */}
-     
-          <Services />
-      
+      {/* EXPERTISE */}
 
-        {/* CONTACT */}
-     
-          <ContactForm />
-   
-     
+      <Expertise />
 
-    
+      {/* SERVICES */}
+
+      <Services />
+
+      {/* CONTACT */}
+
+      <ContactForm />
     </>
   );
 }

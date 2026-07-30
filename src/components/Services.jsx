@@ -2,31 +2,32 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { FaTools, FaThLarge, FaFaucet } from "react-icons/fa";
 
 const services = [
   {
     name: "Space-saver furniture",
-    image: "/images/services/kids_bedroom.webp",
+    image: "/images/services/kids_bedroom1.webp",
   },
 
   {
     name: "Wardrobes",
-    image: "/images/services/kids_bedroom.webp",
+    image: "/images/services/kids_bedroom2.webp",
   },
 
   {
     name: "TV Units",
-    image: "/images/services/kids_bedroom.webp",
+    image: "/images/services/kids_bedroom3.webp",
   },
 
   {
     name: "Study Table",
-    image: "/images/services/kids_bedroom.webp",
+    image: "/images/services/kids_bedroom4.webp",
   },
 
   {
     name: "False Ceilings",
-    image: "/images/services/false_ceilings.webp",
+    image: "/images/services/kids_bedroom5.webp",
   },
 
   {
@@ -56,17 +57,17 @@ const services = [
 
   {
     name: "Renovation",
-    image: "/images/services/renovation.webp",
+    icon: FaTools,
   },
 
   {
     name: "Tiles",
-    image: "/images/services/tiles.webp",
+    icon: FaThLarge,
   },
 
   {
     name: "Plumbing",
-    image: "/images/services/plumbing.webp",
+    icon: FaFaucet,
   },
 ];
 
@@ -96,12 +97,16 @@ export default function Services() {
             }}
           >
             <div className="service-image">
-              <Image
-                src={service.image}
-                alt={service.name}
-                width={70}
-                height={70}
-              />
+              {service.icon ? (
+                <service.icon className="service-icon" />
+              ) : (
+                <Image
+                  src={service.image}
+                  alt={service.name}
+                  width={70}
+                  height={70}
+                />
+              )}
             </div>
 
             <p>{service.name}</p>
