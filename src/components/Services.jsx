@@ -56,7 +56,7 @@ const services = [
 
   {
     name: "Renovation",
-    image: "/images/services/renovation.webp",
+    image: "/images/services/Renovation.webp",
   },
 
   {
