@@ -80,9 +80,9 @@ export default function Header() {
         ))}
       </nav>
 
-      <Link href="/contact" className="expert desktop-btn">
+      {/* <Link href="/contact" className="expert desktop-btn">
         Call an Expert
-      </Link>
+      </Link> */}
 
       <button
         className="menu-btn"
@@ -102,9 +102,9 @@ export default function Header() {
             </Link>
           ))}
 
-          <Link href="/contact" className="expert" onClick={closeMenu}>
+          {/* <Link href="/contact" className="expert" onClick={closeMenu}>
             Call an Expert
-          </Link>
+          </Link> */}
         </div>
       )}
     </header>

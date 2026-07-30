@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { FaTools, FaThLarge, FaFaucet } from "react-icons/fa";
 
 const services = [
   {
@@ -57,17 +56,17 @@ const services = [
 
   {
     name: "Renovation",
-    icon: FaTools,
+    image: "/images/services/renovation.webp",
   },
 
   {
     name: "Tiles",
-    icon: FaThLarge,
+    image: "/images/services/Tiles4.webp",
   },
 
   {
     name: "Plumbing",
-    icon: FaFaucet,
+    image: "/images/services/plumbing2.webp",
   },
 ];
 
@@ -97,16 +96,12 @@ export default function Services() {
             }}
           >
             <div className="service-image">
-              {service.icon ? (
-                <service.icon className="service-icon" />
-              ) : (
-                <Image
-                  src={service.image}
-                  alt={service.name}
-                  width={70}
-                  height={70}
-                />
-              )}
+              <Image
+                src={service.image}
+                alt={service.name}
+                width={70}
+                height={70}
+              />
             </div>
 
             <p>{service.name}</p>
