@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 const services = [
   {
-    icon: "/images/luxury-residential.avif",
+    icon: "/images/img2.avif",
 
     title: "Strategic Consultation",
 
@@ -13,7 +13,7 @@ const services = [
   },
 
   {
-    icon: "/images/commercial.avif",
+    icon: "/images/img1.avif",
 
     title: "Luxury Residential Design",
 
@@ -22,7 +22,7 @@ const services = [
   },
 
   {
-    icon: "/images/commercial.avif",
+    icon: "/images/img1.avif",
 
     title: "Commercial & Retail Mastery",
 
@@ -78,32 +78,24 @@ export default function Expertise() {
           />
         </motion.div>
 
-     <div className="expertise-content">
-  {services.map((service, index) => (
-    <motion.div
-      className="service-item"
-      key={index}
-    >
+        <div className="expertise-content">
+          {services.map((service, index) => (
+            <motion.div className="service-item" key={index}>
+              <div className="tablet-service-icon">
+                <Image
+                  src={service.icon}
+                  alt={service.title}
+                  width={70}
+                  height={70}
+                />
+              </div>
 
-      <div className="tablet-service-icon">
-        <Image
-          src={service.icon}
-          alt={service.title}
-          width={70}
-          height={70}
-        />
-      </div>
+              <h3>{service.title}</h3>
 
-
-      <h3>{service.title}</h3>
-
-
-      <p>{service.description}</p>
-
-
-    </motion.div>
-  ))}
-</div>
+              <p>{service.description}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
