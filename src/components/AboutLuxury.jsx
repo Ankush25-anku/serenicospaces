@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import LuxuryShowcase from "./LuxuryShowcase";
 
 export default function AboutLuxury() {
   return (
@@ -10,46 +11,27 @@ export default function AboutLuxury() {
 
         <motion.div
           className="about-title"
-          initial={{
-            opacity: 0,
-            x: -50,
-          }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            duration: 0.8,
-          }}
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
         >
           <h2>
             Crafting Timeless
-            <br />
-            Interiors
+            <br className="tablet-break" /> Interiors
           </h2>
         </motion.div>
 
-        {/* RIGHT CONTENT */}
+        <div className="tablet-showcase">
+          <LuxuryShowcase />
+        </div>
 
         <motion.div
           className="about-content"
-          initial={{
-            opacity: 0,
-            x: 50,
-          }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            duration: 0.8,
-          }}
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
         >
           <p>
             <strong>Serenico Spaces</strong> was founded on a singular premise:

@@ -8,7 +8,9 @@ const page = () => {
   return (
     <div>
       <AboutLuxury />
-      <LuxuryShowcase />
+  <div className="desktop-showcase">
+  <LuxuryShowcase />
+</div>
       <Praise />
       <InstagramGallery />
     </div>

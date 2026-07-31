@@ -2,9 +2,10 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-
 const services = [
   {
+    icon: "/images/luxury-residential.avif",
+
     title: "Strategic Consultation",
 
     description:
@@ -12,6 +13,8 @@ const services = [
   },
 
   {
+    icon: "/images/commercial.avif",
+
     title: "Luxury Residential Design",
 
     description:
@@ -19,6 +22,8 @@ const services = [
   },
 
   {
+    icon: "/images/commercial.avif",
+
     title: "Commercial & Retail Mastery",
 
     description:
@@ -73,32 +78,32 @@ export default function Expertise() {
           />
         </motion.div>
 
-        <div className="expertise-content">
-          {services.map((service, index) => (
-            <motion.div
-              className="service-item"
-              key={index}
-              initial={{
-                opacity: 0,
-                x: 40,
-              }}
-              whileInView={{
-                opacity: 1,
-                x: 0,
-              }}
-              viewport={{
-                once: true,
-              }}
-              transition={{
-                delay: index * 0.15,
-              }}
-            >
-              <h3>{service.title}</h3>
+     <div className="expertise-content">
+  {services.map((service, index) => (
+    <motion.div
+      className="service-item"
+      key={index}
+    >
 
-              <p>{service.description}</p>
-            </motion.div>
-          ))}
-        </div>
+      <div className="tablet-service-icon">
+        <Image
+          src={service.icon}
+          alt={service.title}
+          width={70}
+          height={70}
+        />
+      </div>
+
+
+      <h3>{service.title}</h3>
+
+
+      <p>{service.description}</p>
+
+
+    </motion.div>
+  ))}
+</div>
       </div>
     </section>
   );

@@ -57,6 +57,11 @@ export default function About() {
             lifestyle.
           </p>
 
+          {/* TABLET IMAGE */}
+          <div className="tablet-featured">
+            <FeaturedInterior />
+          </div>
+
           {/* MOBILE IMAGE */}
           <div className="mobile-featured">
             <FeaturedInterior />

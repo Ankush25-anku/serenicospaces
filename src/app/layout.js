@@ -1,13 +1,31 @@
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import {
+  Playfair_Display,
+  Manrope,
+  Roboto,
+  Montserrat,
+} from "next/font/google";
 import "./globals.css";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import MoveToTop from "@/components/MoveToTop";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const heading = Cormorant_Garamond({
+const heading = Playfair_Display({
   subsets: ["latin"],
-  weight: ["400", "500",],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["500"],
+  display: "swap",
 });
 const body = Manrope({
   subsets: ["latin"],
@@ -26,6 +44,8 @@ export default function RootLayout({ children }) {
         style={{
           "--font-heading": heading.style.fontFamily,
           "--font-body": body.style.fontFamily,
+          "--font-roboto": roboto.style.fontFamily,
+          "--font-montserrat": montserrat.style.fontFamily,
         }}
       >
         <Header />
