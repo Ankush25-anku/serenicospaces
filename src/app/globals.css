@@ -349,12 +349,10 @@ body {
   border-radius: 20px;
 }
 
-@media (min-width:1024px) {
-
+@media (min-width: 1024px) {
   .mobile-menu {
-    display:none;
+    display: none;
   }
-
 }
 /* =====================================
           TABLET
@@ -390,58 +388,45 @@ body {
           MOBILE
 ===================================== */
 
-@media (max-width:1023px) {
-
+@media (max-width: 1023px) {
   .header {
+    height: 88px;
 
-    height:88px;
-
-    padding:0 25px;
-
+    padding: 0 25px;
   }
-
 
   .logo {
-
-    width:210px;
-
+    width: 210px;
   }
-
 
   .desktop-nav,
   .desktop-btn {
-
-    display:none;
-
+    display: none;
   }
-
 
   .menu-btn {
+    display: flex;
 
-    display:flex;
+    align-items: center;
 
-    align-items:center;
+    justify-content: center;
 
-    justify-content:center;
+    background: none;
 
-    background:none;
+    border: none;
 
-    border:none;
+    cursor: pointer;
 
-    cursor:pointer;
+    font-size: 34px;
 
-    font-size:34px;
+    color: #222;
 
-    color:#222;
+    position: relative;
 
-    position:relative;
+    z-index: 100000;
 
-    z-index:100000;
-
-    padding:0;
-
+    padding: 0;
   }
-
 }
 /* =====================================
           HERO SECTION
@@ -793,6 +778,9 @@ body {
 /* ==============================
         MOBILE
 ============================== */
+/* ==============================
+        MOBILE
+============================== */
 
 @media (max-width: 640px) {
   .hero {
@@ -816,29 +804,50 @@ body {
 
   .hero__copy {
     width: 100%;
+
     max-width: 100%;
+
+    margin: 0 auto;
 
     padding: 0;
 
-    text-align: center;
-
     transform: none;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
   }
+
   .hero__title {
+    margin: 0 auto;
+
     font-size: 40px;
 
     line-height: 46px;
+
+    text-align: center;
+
+    white-space: nowrap;
   }
 
   .hero__tagline {
-    margin-top: 8px;
+    margin: 10px auto 0;
 
     font-size: 15px;
 
     line-height: 22px;
 
     text-align: center;
+
+    white-space: nowrap;
   }
+
   /* IMAGE */
 
   .hero__media {
@@ -846,7 +855,7 @@ body {
 
     height: 290px;
 
-    margin: 0;
+    margin: 0 auto;
 
     display: flex;
 
@@ -1268,9 +1277,39 @@ body {
 /* =====================================
         MOBILE ONLY
 ===================================== */
+/* =====================================
+        MOBILE ONLY
+===================================== */
 
 @media (max-width: 768px) {
   .tablet-featured {
+    display: block;
+    margin: 40px 0;
+  }
+
+  .tablet-featured .featured-interior {
+    padding: 0;
+    background: transparent;
+  }
+
+  .tablet-featured .featured-image {
+    width: 320px;
+    max-width: 100%;
+    height: 235px;
+    margin: 0 auto;
+    border-radius: 22px;
+    overflow: hidden;
+  }
+
+  .tablet-featured .featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* Hide desktop image on mobile */
+  .desktop-featured {
     display: none;
   }
 }
@@ -1625,28 +1664,58 @@ body {
 ===================================== */
 
 @media (max-width: 480px) {
+  .expertise {
+    padding: 70px 25px 80px;
+  }
+
+  .expertise-header {
+    max-width: 320px;
+
+    margin: 0 auto 40px;
+  }
+
   .expertise-header h2 {
     font-size: 40px;
+
+    line-height: 48px;
   }
 
   .expertise-header p {
     font-size: 16px;
+
+    line-height: 24px;
+
+    max-width: 320px;
+
+    margin: 16px auto 0;
   }
 
-  .expertise-image {
-    height: 380px;
+  .expertise-grid {
+    max-width: 320px;
+  }
 
-    border-radius: 22px;
+  .tablet-service-icon img {
+    width: 88px;
+
+    height: 88px;
+  }
+
+  .service-item {
+    margin-bottom: 55px;
   }
 
   .service-item h3 {
-    font-size: 23px;
+    font-size: 22px;
+
+    line-height: 28px;
   }
 
   .service-item p {
-    font-size: 15px;
+    max-width: 320px;
 
-    line-height: 1.6;
+    font-size: 16px;
+
+    line-height: 24px;
   }
 }
 
@@ -1801,17 +1870,19 @@ body {
   display: none;
 }
 
-@media (min-width: 769px) and (max-width: 1023px) {
+/* =====================================
+        TABLET + MOBILE ICON VERSION
+===================================== */
+
+@media (max-width: 1023px) {
   .expertise-image {
     display: none;
   }
 
   .expertise-grid {
     display: block;
-
     max-width: 340px;
-
-    margin: auto;
+    margin: 0 auto;
   }
 
   .expertise-content {
@@ -1820,62 +1891,43 @@ body {
 
   .service-item {
     text-align: center;
-
     margin-bottom: 70px;
   }
+
   .tablet-service-icon {
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     margin-bottom: 28px;
   }
 
   .tablet-service-icon img {
     width: 92px;
-
     height: 92px;
-
     object-fit: contain;
   }
 
   .service-item h3 {
     font-family: "Playfair Display", serif;
-
     font-size: 24px;
-
     font-weight: 600;
-
     line-height: 31px;
-
     color: #c58b16;
-
     text-align: center;
-
     margin-bottom: 14px;
   }
 
   .service-item p {
     font-family: "Roboto", sans-serif;
-
     font-size: 16px;
-
     font-weight: 400;
-
     line-height: 24px;
-
     color: #24364b;
-
     max-width: 340px;
-
     text-align: justify;
-
-    margin: auto;
+    margin: 0 auto;
   }
 }
-
 /* ===================================
         SERVICES SECTION
 =================================== */
