@@ -36,7 +36,6 @@ const verticals = [
     image: "/images/verticals/false-ceiling.avif",
   },
 
-
   // 5th CENTERED SECTION
 
   {
@@ -73,94 +72,66 @@ export default function DesignVerticals() {
         </p>
       </motion.div>
 
-<div className="vertical-grid">
+      <div className="vertical-grid">
+        {verticals.map((item, index) => (
+          <motion.div
+            key={index}
+            className={`vertical-card ${item.featured ? "featured-card" : ""}`}
+            initial={{
+              opacity: 0,
+              y: 40,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              duration: 0.8,
+              delay: index * 0.15,
+            }}
+          >
+            <div className="vertical-image">
+              <Image
+                src={item.image}
+                alt={item.title}
+                width={700}
+                height={450}
+              />
+            </div>
 
-{verticals.map((item,index)=>(
+            <h3>{item.title}</h3>
 
-<motion.div
-key={index}
-className={`vertical-card ${
-item.featured ? "featured-card" : ""
-}`}
+            <h4>{item.category}</h4>
 
-initial={{
-opacity:0,
-y:40
-}}
-
-whileInView={{
-opacity:1,
-y:0
-}}
-
-viewport={{
-once:true
-}}
-
-transition={{
-duration:0.8,
-delay:index*0.15
-}}
-
->
-
-
-<div className="vertical-image">
-
-<Image
-src={item.image}
-alt={item.title}
-width={700}
-height={450}
-/>
-
-</div>
-
-
-<h3>{item.title}</h3>
-
-<h4>{item.category}</h4>
-
-<p className="vertical-description">
-{item.description}
-</p>
-
-
-</motion.div>
-
-))}
-
+            <p className="vertical-description">{item.description}</p>
+          </motion.div>
+        ))}
       </div>
-
 
       {/* CALL EXPERT BUTTON */}
 
       <motion.button
         className="vertical-expert-btn"
-
         initial={{
-          opacity:0,
-          y:30
+          opacity: 0,
+          y: 30,
         }}
-
         whileInView={{
-          opacity:1,
-          y:0
+          opacity: 1,
+          y: 0,
         }}
-
         viewport={{
-          once:true
+          once: true,
         }}
-
         transition={{
-          duration:0.8
+          duration: 0.8,
         }}
-
       >
         Call an Expert
       </motion.button>
-
-
     </section>
   );
 }
