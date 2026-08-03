@@ -331,6 +331,8 @@ body {
 
   flex-direction: column;
 
+  align-items: flex-end;   /* moves menu items to right */
+
   gap: 30px;
 
   z-index: 99999;
@@ -338,6 +340,7 @@ body {
 }
 
 .mobile-menu a {
+
   font-family: var(--font-body);
 
   font-size: 22px;
@@ -347,6 +350,11 @@ body {
   color: #111;
 
   text-decoration: none;
+
+  text-align: right;
+
+  width: 100%;
+
 }
 
 .mobile-menu .expert {
