@@ -305,14 +305,21 @@ body {
           MOBILE MENU
 ===================================== */
 
+/* =====================================
+          MOBILE MENU
+===================================== */
+
 .mobile-menu {
+
   position: fixed;
 
   top: 88px;
 
-  left: 0;
+  right: 0;
 
-  width: 100vw;
+  left: auto;
+
+  width: 320px;
 
   min-height: 100vh;
 
@@ -327,6 +334,7 @@ body {
   gap: 30px;
 
   z-index: 99999;
+
 }
 
 .mobile-menu a {
