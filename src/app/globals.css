@@ -3000,25 +3000,73 @@ body {
         MOBILE
 ================================ */
 
+/* ================================
+        MOBILE
+================================ */
+
 @media (max-width: 768px) {
   .legacy {
     padding: 60px 25px 80px;
   }
 
   .legacy h2 {
+    width: 100%;
+
+    max-width: 320px;
+
+    margin: 0 auto 30px;
+
+    font-family: "Playfair Display", serif;
+
     font-size: 40px;
+
+    font-style: normal;
+
+    font-weight: 600;
 
     line-height: 52px;
 
-    margin-bottom: 30px;
+    letter-spacing: normal;
+
+    color: rgb(86, 88, 94);
+
+    text-align: center;
+
+    white-space: normal;
+
+    overflow-wrap: break-word;
+
+    -webkit-font-smoothing: antialiased;
+
+    text-rendering: geometricPrecision;
+  }
+
+  .legacy-content {
+    max-width: 320px;
+
+    margin: 0 auto;
   }
 
   .legacy-content p {
+    font-family: "Roboto", sans-serif;
+
     font-size: 15px;
+
+    font-style: normal;
+
+    font-weight: 400;
 
     line-height: 24px;
 
+    letter-spacing: normal;
+
+    color: #111827;
+
+    text-align: justify;
+
     margin-bottom: 28px;
+
+    -webkit-font-smoothing: antialiased;
   }
 }
 /* ==================================
