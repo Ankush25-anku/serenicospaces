@@ -310,7 +310,6 @@ body {
 ===================================== */
 
 .mobile-menu {
-
   position: fixed;
 
   top: 88px;
@@ -331,16 +330,14 @@ body {
 
   flex-direction: column;
 
-  align-items: flex-end;   /* moves menu items to right */
+  align-items: flex-end; /* moves menu items to right */
 
   gap: 30px;
 
   z-index: 99999;
-
 }
 
 .mobile-menu a {
-
   font-family: var(--font-body);
 
   font-size: 22px;
@@ -354,7 +351,6 @@ body {
   text-align: right;
 
   width: 100%;
-
 }
 
 .mobile-menu .expert {
@@ -3239,22 +3235,61 @@ body {
 /* ==========================
         TABLET ONLY
 ========================== */
+/* ==========================
+        TABLET ONLY
+/* ==========================
+        TABLET ONLY
+========================== */
+
+/* ==========================
+        TABLET ONLY
+========================== */
 
 @media (min-width: 769px) and (max-width: 1023px) {
   .signature-spaces {
+    background: #f7f4ee;
+
     padding: 55px 70px 65px;
   }
 
   .signature-row,
   .signature-row.reverse {
+    display: grid;
+
     grid-template-columns: 1fr;
 
     direction: ltr;
 
-    gap: 45px;
+    gap: 35px;
 
     margin-bottom: 65px;
   }
+
+  /* IMAGE */
+
+  .signature-image {
+    width: 340px;
+
+    height: 220px;
+
+    margin: 0 auto;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+  }
+
+  .signature-image img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 24px;
+  }
+
+  /* CONTENT */
 
   .signature-content {
     max-width: 340px;
@@ -3275,8 +3310,6 @@ body {
 
     font-size: 20px;
 
-    font-style: normal;
-
     font-weight: 600;
 
     line-height: 26px;
@@ -3284,10 +3317,6 @@ body {
     color: rgb(196, 134, 17);
 
     text-align: center;
-
-    white-space: break-spaces;
-
-    overflow-wrap: break-word;
   }
 
   .signature-content p {
@@ -3306,12 +3335,13 @@ body {
     text-align: justify;
   }
 
-  .signature-image img {
-    height: 320px;
-
-    border-radius: 24px;
+  .signature-content a {
+    font-size: 15px;
   }
 }
+/* ==========================
+        MOBILE
+========================== */
 /* ==========================
         MOBILE
 ========================== */
@@ -3328,6 +3358,18 @@ body {
     margin-bottom: 80px;
   }
 
+  /* IMAGE FIRST */
+
+  .signature-image {
+    order: 1;
+  }
+
+  /* CONTENT SECOND */
+
+  .signature-content {
+    order: 2;
+  }
+
   .signature-content h3 {
     font-size: 28px;
   }
@@ -3340,7 +3382,6 @@ body {
     height: 300px;
   }
 }
-
 /* =====================================
       DESIGN VERTICALS
 ===================================== */
